@@ -1,0 +1,23 @@
+{
+  "name": "express-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muradkhan0161/Express-starter.git"
+  },
+  "author": "Murad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Muradkhan0161/Express-starter/issues"
+  },
+  "homepage": "https://github.com/Muradkhan0161/Express-starter#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
