@@ -1,20 +1,25 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use('/',(req, res, next) => {
-  console.log('This will always runs first');
-  next();
-});
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.use('/addProduct',(req, res, next) => {
-  console.log('Hey!');
-  res.send('<h1>This is "Add product page"</h1>');
+  res.send('<form action="/product" method="POST"><input type="text" name="title"><button>add product</button></form>')
 });
 
+app.use('/product', (req, res, next) => {
+  console.log(req.body);
+  res.redirect('/')
+})
+
 app.use('/',(req, res, next) => {
-  console.log('In another middleware!');
+ // console.log('In another middleware!',req.originalUrl);
   res.send('<h1>Express is here to help</h1>');
 });
+
 
 app.listen(3000);
