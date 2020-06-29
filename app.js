@@ -11,7 +11,7 @@ app.use('/addProduct',(req, res, next) => {
   res.send('<form action="/product" method="POST"><input type="text" name="title"><button>add product</button></form>')
 });
 
-app.use('/product', (req, res, next) => {
+app.post('/product', (req, res, next) => {
   console.log(req.body);
   res.redirect('/')
 })
