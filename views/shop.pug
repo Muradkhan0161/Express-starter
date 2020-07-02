@@ -3,7 +3,7 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Add Product
+        title #{docTitle}
         link(rel="stylesheet", href="/css/main.css")
         link(rel="stylesheet", href="/css/product.css")
     body
@@ -15,4 +15,21 @@ html(lang="en")
                     li.main-header__item
                         a.active(href='/admin/addProduct') add Product
                     
-    
+    .main
+        if prods.length > 0
+            .grid
+                each product in prods
+                    .article.card.product-item
+                        .header.card__header
+                            .h1.product__title #{product.title}
+
+                        .div.card__image
+                            img(src="https://c.ndtvimg.com/2019-05/9tq51ug_rollsroyce-wraith_625x300_26_May_19.jpg", alt="Ekta Gari")
+                        .div.card__content
+                            .h2.product__price $19.99
+                            .p.product__description A very interesting book about so many even more interesting things!
+                        .div.card__actions
+                            .button.btn Add to Cart
+        else 
+            h1 Khali dokan
+            
