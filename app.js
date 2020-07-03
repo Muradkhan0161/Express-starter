@@ -21,7 +21,7 @@ app.use('/admin', adminData.routes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {
-    res.render("404", {title404:'Tumi ke bhai'})
-})
+    res.status(404).render("404", {title404:'Tumi ke bhai'})
+});
 
 app.listen(3000);
