@@ -9,7 +9,10 @@ const router = express.Router();
 const products = [];
 
 router.get('/addProduct',(req, res, next) => {
-  res.render("addProduct", {pageTitle: 'Admin', path:'/admin/addProduct'})  
+  res.render("addProduct", {
+    pageTitle: 'Admin', 
+    path:'/admin/addProduct'
+  })  
 });
   
   router.post('/addProduct', (req, res, next) => {
